@@ -2,11 +2,12 @@
   "name": "wasm",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/host.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./buildwasm && webpack --config webpack.config.js",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "start": "npm run build && node ./src/host.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,8 @@
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
